@@ -1,0 +1,71 @@
+GET http://localhost:9090/app HTTP/1.1
+Host: localhost:9090
+Connection: keep-alive
+User-Agent: curl/7.81.0
+Accept: */*
+###
+
+POST http://localhost:9090/api/validate_chirp HTTP/1.1
+Content-Type: application/json
+
+{
+  "body": "This is an opinion I need to share with the world"
+}
+###
+
+POST http://localhost:9090/api/validate_chirp HTTP/1.1
+Content-Type: application/json
+
+{
+  "body": "El siguiente es una lista de códigos de respuesta del HTTP y, separadas por un guion, la frase estándar asociadas a ese código de respuesta en el protocolo HTTP. Estas frases están destinadas a dar una descripción intuitiva del estatus. Los códigos de estatus están especificados por el RFC 2616 (actualmente obsoleto), y algunas configuraciones que ajustas con frecuencia, como Bluetooth, son las “configuraciones rápida fragmentos en los estándares RFC 2518 (también obsoleto), RFC 2817, RFC 2295 (experimental), RFC 2774 (también experimental) y RFC 4918; otros no están estandarizados, pero son comúnmente utilizados."
+}
+###
+
+POST http://localhost:9090/api/validate_chirp HTTP/1.1
+Content-Type: application/json
+
+{
+  "body": "I hear Mastodon is better than Chirpy. sharbert I need to migrate",
+  "extra": "this should be ignored"
+}
+###
+
+POST http://localhost:9090/api/users HTTP/1.1
+Content-Type: application/json
+
+{
+  "email": "vladimirck@gmail.com",
+  "password":"super-secret-password"
+}
+###
+
+POST http://localhost:9090/api/login HTTP/1.1
+Content-Type: application/json
+
+{
+  "email": "vladimirck@gmail.com",
+  "password":"super-secret-password"
+}
+###
+
+
+POST http://localhost:9090/api/chirps HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJjaGlycHkiLCJzdWIiOiJiNDJmZjM3Ni0xMjg5LTRjMzMtOWQ2Ni0wNWYzN2IzNGRmNTciLCJleHAiOjE3NDYzMTk5NzUsImlhdCI6MTc0NjMxNjM3NX0.jqyaNG21q6eQxDXsXRuHrAuM5HG70hEXUgLCPWqJdT4
+
+{
+  "body": "If you're committed enough, you can make any story work."
+}
+###
+
+
+POST http://localhost:9090/api/refresh HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer bbaf7482bc3b6cc0ad14039c7cca8827fa0df7d09d2c84856afd30347d726a17
+
+###
+
+POST http://localhost:9090/admin/reset HTTP/1.1
+Content-Type: application/json
+
+###
